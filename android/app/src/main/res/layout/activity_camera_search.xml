@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/camera_search_background"
+        android:keepScreenOn="true">
+
+        <com.webkul.mlkit.customviews.CameraSourcePreview
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <webkul.opencart.mobikul.mlkit.customviews.GraphicOverlay
+            android:id="@+id/graphic_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/result_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/control"
+                android:orientation="vertical"
+                android:visibility="visible"
+                tools:listitem="@layout/camera_simple_spinner_item" />
+
+            <LinearLayout
+                android:id="@+id/control"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="#000"
+                android:orientation="horizontal">
+
+                <ToggleButton
+                    android:id="@+id/facing_switch"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/toggle_style"
+                    android:checked="false"
+                    android:textOff=""
+                    android:textOn="" />
+
+                <TextView
+                    android:id="@+id/resultsMessageTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:drawableTint="@color/layout_background"
+                    android:padding="6dp"
+                    android:text="@string/results_found"
+                    android:textAlignment="center"
+                    android:textColor="@color/btn_text_color" />
+
+                <ToggleButton
+                    android:id="@+id/flash_switch"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/flash_toggle_bg"
+                    android:checked="false"
+                    android:padding="6dp"
+                    android:textOff=""
+                    android:textOn="" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
